@@ -1,0 +1,19 @@
+Revision history for Net-HTTPS-Any
+
+0.10    Sat May  1 13:39:39 PDT 2010
+        - Pull in changes from Business::OnlinePayment::HTTPS 0.09 from
+          Business::OnlinePayment 3.00
+        - Default Content-Type to application/x-www-form-urlencoded
+        - Added WHY THIS MODULE section to POD
+        - Updated tests for new world of not returning HTTP as part of the
+          response code
+        - Removed meaningless Content-Type handling from https_get
+        - Added/documented debugging option
+        - Updated servers used for testing in examples and tests
+        - Supress uninitialized value warnings from Net::SSLeay
+
+0.09    unrelesed
+        - First version numbered 0.09 (based on
+          Business::OnlinePayment::HTTPS 0.08 from
+          Business::OnlinePayment 3.00_08)
+
