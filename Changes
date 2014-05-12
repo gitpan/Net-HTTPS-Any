@@ -1,5 +1,14 @@
 Revision history for Net-HTTPS-Any
 
+0.11    unreleased
+        - doc: update example in synopsis
+        - Depend on Net::SSLeay and test on it (and not Crypt::SSLeay), to
+          eliminate spurious test failures and increase installability.  Alas,
+          but the last four years have not provided OR relationships in CPAN
+          dependencies.
+        - TODO: document our usage of LWP isn't necessarily Crypt::SSLeay with
+          new (which?) LWP versions.
+
 0.10    Sat May  1 13:39:39 PDT 2010
         - Pull in changes from Business::OnlinePayment::HTTPS 0.09 from
           Business::OnlinePayment 3.00

@@ -17,6 +17,11 @@ WriteMakefile(
         # 'Net::SSLeay' => 0,
         # or 'Crypt::SSLeay' => 0,
         #    'LWP' => 0,
+
+        #failing tests is worse, Net::SSLeay appears to finally have emerged
+        # as best-practice with the release of LWP::Protocol::https that uses
+        # IO::Socket::SSL and therefore Net::SSLeay
+        'Net::SSLeay' => 0,
     },
     dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean               => { FILES => 'Net-HTTPS-Any-*' },

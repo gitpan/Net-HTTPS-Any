@@ -43,11 +43,11 @@ BEGIN {
 
 =head1 NAME
 
-Net::HTTPS::Any - Simple HTTPS class using whichever underlying SSL module is available
+Net::HTTPS::Any - Simple HTTPS client using whichever underlying SSL module is available
 
 =cut
 
-our $VERSION = '0.10';
+our $VERSION = '0.11_01';
 
 =head1 SYNOPSIS
 
@@ -58,6 +58,8 @@ our $VERSION = '0.10';
                    { 'host' => 'www.fortify.net',
                      'port' => 443,
                      'path' => '/sslcheck.html',
+                     'args' => { 'field' => 'value' },
+                     #'args' => [ 'field'=>'value' ], #order preserved
                    },
                  );
 

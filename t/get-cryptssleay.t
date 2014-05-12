@@ -5,6 +5,9 @@ use warnings;
 use Test::More;
 
 BEGIN {
+
+  plan skip_all => "LWP tests disabled to avoid excessive dependencies";
+
   plan( tests=>4 );
   $Net::HTTPS::Any::skip_NetSSLeay=1;
   $Net::HTTPS::Any::skip_NetSSLeay=1;
