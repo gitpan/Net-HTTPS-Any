@@ -47,7 +47,7 @@ Net::HTTPS::Any - Simple HTTPS client using whichever underlying SSL module is a
 
 =cut
 
-our $VERSION = '0.11_01';
+our $VERSION = '0.11';
 
 =head1 SYNOPSIS
 
@@ -93,6 +93,17 @@ especially if you aim to support multiple OSes/disributions, using this module
 for speaking HTTPS may make things easier on your users.  It allows your code
 to be used with either SSL implementation.
 
+=head1 FUTURE
+
+Using LWP::Protocol::https 6.02 or later, the LWP path actually uses
+Net::SSLeay also instead of Crypt::SSLeay.  Going forward that makes this
+module more of historical interest, especially so since modern LWP has its own
+mechanism to force use of Crypt::SSLeay:
+  $Net::HTTPS::SSL_SOCKET_CLASS = "Net::SSL";
+
+Therefore this module will likely eventually become a wrapper around a single
+codepath, driven by the conservative needs of Business::OnlinePayment::HTTPS.
+
 =head1 FUNCTIONS
 
 =head2 https_get HASHREF | FIELD => VALUE, ...
@@ -121,7 +132,7 @@ For example: { 'X-Header1' => 'value', ... }
 
 =item args
 
-CGI arguments, eitehr as a hashref or a listref.  In the latter case, ordering
+CGI arguments, either as a hashref or a listref.  In the latter case, ordering
 is preserved (see L<Tie::IxHash> to do so when passing a hashref).
 
 =item debug
@@ -240,7 +251,7 @@ Defaults to "application/x-www-form-urlencoded" if not specified.
 
 =item args
 
-CGI arguments, eitehr as a hashref or a listref.  In the latter case, ordering
+CGI arguments, either as a hashref or a listref.  In the latter case, ordering
 is preserved (see L<Tie::IxHash> to do so when passing a hashref).
 
 =item content
@@ -390,7 +401,7 @@ L<http://search.cpan.org/dist/Net-HTTPS-Any>
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2008-2010 Freeside Internet Services, Inc. (http://freeside.biz/)
+Copyright 2008-2014 Freeside Internet Services, Inc. (http://freeside.biz/)
 All rights reserved.
 
 This program is free software; you can redistribute it and/or modify it

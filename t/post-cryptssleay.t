@@ -33,9 +33,10 @@ ok( length($content), 'Received content' );
 #404
 
 my($content2, $response2, %headers2) = https_post(
-  { 'host' => 'www.fortify.net',
+  { 'host' => 'www.google.com',
     'port' => 443,
     'path' => '/notfound.html',
+    'args' => { 'length' => 'required' },
   },
   'net_https_any_test' => 1,
 );
